@@ -1,0 +1,22 @@
+FROM node:16
+
+ENV NEXT_TELEMETRY_DISABLES 1
+ENV NODE_ENV development
+
+WORKDIR /app
+
+RUN apt-get update \
+	&& apt-get install --no-install-recommends --no-install-suggests -y \
+	jq \
+	&& apt-get remove --purge --auto-remove -y && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/*
+
+COPY package*.json ./
+
+RUN npm ci
+
+COPY . .
+
+RUN chmod +x ./entrypoint.sh
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+CMD ["npm", "run", "dev"]

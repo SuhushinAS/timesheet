@@ -1,0 +1,14 @@
+.Footer {
+  background-color: lightgray;
+  flex-shrink: 0;
+  padding: 5px;
+
+  &__LinkText {
+    vertical-align: middle;
+  }
+
+  &__Logo {
+    height: 1em;
+    vertical-align: middle;
+  }
+}

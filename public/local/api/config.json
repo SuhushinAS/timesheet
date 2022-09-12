@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "params": {
+      "client_id": "",
+      "response_type": "token"
+    },
+    "url": "https://oauth.yandex.ru/authorize"
+  },
+  "options": {
+    "headers": {
+      "X-Org-ID": ""
+    }
+  },
+  "trackerUrl": "https://tracker.yandex.ru/"
+}

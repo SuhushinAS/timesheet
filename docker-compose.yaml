@@ -1,0 +1,22 @@
+services:
+  timesheet:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: timesheet
+    environment:
+      ORG_ID: ""
+      CLIENT_ID: ""
+    networks:
+      - timesheet-net
+    ports:
+      - 3000:3000
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/app
+
+networks:
+  timesheet-net:
+    driver: bridge

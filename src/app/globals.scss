@@ -1,0 +1,15 @@
+@import 'antd/dist/antd.css';
+
+html {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+body,
+#root,
+#__next {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+}
